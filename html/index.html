@@ -31,16 +31,21 @@
 					<h1 class="display-5 fw-bold lh-1 mb-3">Welcome to Catalyst Hub</h1>
 					<p class="lead">A place where things happen and cause other things to happen.</p>
 					<div class="d-grid gap-2 d-md-flex justify-content-md-start">
-					  <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">One?</button>
-					  <button type="button" class="btn btn-outline-secondary btn-lg px-4">Two?</button>
+					  <button id="gtContact"  class="btn btn-outline-secondary btn-lg px-4" onclick="navigate('')">Contact</button>
+					  <button id="gtPoS"      class="btn btn-outline-secondary btn-lg px-4" onclick="navigate('')">  PoS  </button>
+					  <button id="gtRegister" class="btn btn-outline-secondary btn-lg px-4" onclick="navigate('')">Register</button>
+					  <button id="gtSignIn"   class="btn btn-outline-secondary btn-lg px-4" onclick="navigate('')">Sign in</button>
 					</div>
 				</div>
 			</div>
 		</div>
-	  
-		<div class="text-center">
-			<h1> Welcome to Catalyst Hub</h1>
-			<p> A place where things happen and cause other things to happen</p>
-		</div>
+		
+		<script type="text/javascript">
+			document.getElementById("gtContact").onclick = function () { location.href = "contact.html"; };
+			
+			document.getElementById("gtContact").onclick = function () { location.href = "contact.html"; };
+			document.getElementById("gtContact").onclick = function () { location.href = "contact.html"; };
+			document.getElementById("gtContact").onclick = function () { location.href = "contact.html"; };
+		</script>
 	</body>
 </html>

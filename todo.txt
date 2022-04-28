@@ -1,16 +1,16 @@
-A homepage
-A contact page
-A products/services page
-A user registration page
-A user login page
+x homepage
+  contact page
+  products/services page
+  user registration page
+  user login page
 
-HTML Table
-HTML Forms when applicable:
+  HTML Table
+  HTML Forms when applicable:
 	at least one field with the type of password
 	at least one properly formated <select> element
 	at least one type HTML5 validation
-images
-HTML list
-HTML semantic element
-CSS framework component like Bootstrap
-CSS grid framework
+/ images
+  HTML list
+  HTML semantic element
+  CSS framework component like Bootstrap
+  CSS grid framework
