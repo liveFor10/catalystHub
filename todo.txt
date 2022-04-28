@@ -1,8 +1,8 @@
 x homepage
-  contact page
-  products/services page
-  user registration page
-  user login page
+x contact page
+x products/services page
+x user registration page
+x user sign in page
 
   HTML Table
   HTML Forms when applicable:
