@@ -3,14 +3,12 @@ x contact page
 x products/services page
 x user registration page
 x user sign in page
-
   HTML Table
-  HTML Forms when applicable:
-	at least one field with the type of password
-	at least one properly formated <select> element
-	at least one type HTML5 validation
-/ images
+x at least one field with the type of password
+  at least one properly formated <select> element
+  at least one type HTML5 validation
+x images
   HTML list
   HTML semantic element
-  CSS framework component like Bootstrap
+x CSS framework component like Bootstrap
   CSS grid framework
