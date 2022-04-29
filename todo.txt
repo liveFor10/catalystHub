@@ -1,6 +1,6 @@
 x homepage
 x contact page
-x products/services page  https://sites.google.com/view/pocshelli
+x products/services page
 x user registration page
 x user sign in page
   HTML Table
@@ -9,6 +9,6 @@ x at least one field with the type of password
   at least one type HTML5 validation
 x images
   HTML list
-  HTML semantic element
+x HTML semantic element
 x CSS framework component like Bootstrap
   CSS grid framework
