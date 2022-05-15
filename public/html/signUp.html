@@ -10,20 +10,21 @@
 
 	<body class="text-center">
 		<main class="form-signin">
-			<form>
+			<form name="signup" action="/auth/signUp" method=post>
 				<img src="../images/catalystHubLogo.png" class="mb-4"
 				  alt="catalyst spark" width="274" height="107">
-				<h1 class="h3 mb-3 fw-normal">Please register</h1>
+				<h1 class="h3 mb-3 fw-normal">Please sign up</h1>
 				<div class="form-floating">
-				  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-				  <label for="floatingInput">Email address</label>
+					<input type="email" class="form-control" id="emailAddress" placeholder="name@example.com">
+					<label for="emailAddress">Email address</label>
 				</div>
 				<div class="form-floating">
-				  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-				  <label for="floatingPassword">Password</label>
+					<input type="password" class="form-control" id="password" placeholder="password">
+					<label for="password">Password</label>
 				</div>
-				<button class="btn btn-outline-secondary btn-lg px-4" type="submit" >Register</button>
-				
+				<input type="submit" id="submit" value="Sign Up"
+					class="btn btn-outline-secondary btn-lg px-4" >
+				</input>
 			</form>
 		</main> 
 	</body>

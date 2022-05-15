@@ -1,0 +1,44 @@
+{
+  "name": "catalysthub",
+  "version": "1.0.0",
+  "description": "a place where things happen",
+  "main": "app.js",
+  "scripts": {
+    "lint": "eslint app.js",
+    "start": "nodemon --inspect app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liveFor10/catalystHub.git"
+  },
+  "author": "m e",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liveFor10/catalystHub/issues"
+  },
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "ejs-lint": "^1.2.2",
+    "express": "^4.18.1",
+    "jquery": "^3.6.0",
+    "mongodb": "^4.6.0",
+    "nodemon": "^2.0.16"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node+modules/**/node_modules"
+    ],
+    "delay": "2500",
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": "4009"
+    }
+  }
+}
