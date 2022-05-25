@@ -1,31 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<link rel="icon" type="image/png" href="/images/.favicon.ico">
 		<meta name="viewport" content="width=device-width" initial-scale=1>
-		<title>Catalyst Hub - register</title>
+		<title>Catalyst Hub - sign up</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
-		<link href="../css/register.css" rel="stylesheet">
+		<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link href="/css/signup.css" rel="stylesheet">
+		<style>
+			.float-parent {
+				border: 0px;
+				padding: 0px;
+			}
+			.float-child-sidebar {
+				width: 150px;
+				float: left;
+				padding: 0px;
+				border-right: 1px solid #000000;
+			}
+			.float-child-main {
+				width: 500px;
+				float: left;
+				padding: 0px;
+				margin-top: 30px;
+				margin-left: 20px;
+			}
+		</style>
 	</head>
+	<body>
+		<!--column container--><div class="float-parent">
+			<!--column 1--><div id="sidebar" class="float-child-sidebar"></div><!--column 1-->
+			<!--column 2--><div class="float-child-main">
+				<div>
+					<form name="signup" action="/auth/signUp" method=post>
+						<h1 class="h3 mb-3 fw-normal">Please sign up</h1>
+						<div class="form-floating">
+							<input class="form-control" type="email" id="usr"
+								name="emailAddress" placeholder="name@example.com">
+							<label for="usr">Email address</label>
+						</div>
+						<div class="form-floating">
+							<input class="form-control" type="password" id="pwd"
+								name="password" placeholder="password">
+							<label for="pwd">Password</label>
+						</div>
+						<input type="submit" id="submit" value="Sign Up"
+							class="btn btn-outline-secondary btn-lg px-4" >
+						</input>
+					</form>
+				</div>
+			<!--column 2--></div>
+		<!--column container--></div>
 
-	<body class="text-center">
-		<main class="form-signin">
-			<form name="signup" action="/auth/signUp" method=post>
-				<img src="../images/catalystHubLogo.png" class="mb-4"
-				  alt="catalyst spark" width="274" height="107">
-				<h1 class="h3 mb-3 fw-normal">Please sign up</h1>
-				<div class="form-floating">
-					<input type="email" class="form-control" id="emailAddress" placeholder="name@example.com">
-					<label for="emailAddress">Email address</label>
-				</div>
-				<div class="form-floating">
-					<input type="password" class="form-control" id="password" placeholder="password">
-					<label for="password">Password</label>
-				</div>
-				<input type="submit" id="submit" value="Sign Up"
-					class="btn btn-outline-secondary btn-lg px-4" >
-				</input>
-			</form>
-		</main> 
+		
+		<script src="/js/jquery.3.6.0.min.js" type="text/javascript"></script>
+		<script src="/js/loadSidebar.js" type="text/javascript"></script> 
+		<script src="/js/bootstrap.bundle.min.js" type="text/javascript"></script>
 	</body>
 </html>

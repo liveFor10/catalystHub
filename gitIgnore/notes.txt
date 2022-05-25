@@ -1,3 +1,8 @@
 
 //from cmd not bash
 taskkill /im node.exe /F
+
+//from bash
+mongo <dbName> "<" (lessThanSign) <javascript file>
+"put the results of the javascript file in to the named mongo db
+mongo bookAPI < books.json.js

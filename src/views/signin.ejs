@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="icon" type="image/png" href="/images/.favicon.ico">
+		<meta name="viewport" content="width=device-width" initial-scale=1>
+		<title>Catalyst Hub - sign in</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link href="/css/signin.css" rel="stylesheet">
+		<style>
+			.float-parent {
+				border: 0px;
+				padding: 0px;
+			}
+			.float-child-sidebar {
+				width: 150px;
+				float: left;
+				padding: 0px;
+				border-right: 1px solid #000000;
+			}
+			.float-child-main {
+				width: 500px;
+				float: left;
+				padding: 0px;
+				margin-top: 30px;
+				margin-left: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<!--column container--><div class="float-parent">
+				<!--column 1--><div id="sidebar" class="float-child-sidebar"></div><!--column 1-->
+				<!--column 2--><div class="float-child-main">
+					<div>
+						<form name="signin" action="/auth/signin" method=post>
+							<h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+							<div class="form-floating">
+								<input type="email" class="form-control" id="usr"
+									name="emailAddress" required placeholder="name@example.com">
+								<label for="usr">Email address</label>
+							</div>
+							<div class="form-floating">
+								<input type="password" class="form-control" id="pwd" 
+									name="password" required placeholder="Password">
+								<label for="passwordID">Password</label>
+							</div>
+							<input type="submit" id="submit" value="Sign In"
+								class="btn btn-outline-secondary btn-lg px-4" >
+							</input>
+						</form>
+					</div>
+				<!--column 2--></div>
+			<!--column container--></div>	
+		</main>
+
+		<script src="/js/jquery.3.6.0.min.js" type="text/javascript"></script>
+		<script src="/js/loadSidebar.js" type="text/javascript"></script> 
+		<script src="/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+	</body>
+</html>
