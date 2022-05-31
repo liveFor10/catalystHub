@@ -36,27 +36,39 @@
 					<h1 class="h3 mb-3 fw-normal">Please enter job info</h1>				
 					<div class="form-floating">
 						<input name="sc1" type="text" class="form-control" id="sc1">
-						<label for="floatingInput">employer name</label>
+						<label for="sc1">employer name</label>
 					</div>
 					<div class="form-floating">
 						<input name="sc2" type="text" class="form-control" id="sc2">
-						<label for="floatingInput">title</label>
+						<label for="sc2">title</label>
 					</div>
 					<div class="form-floating">
 						<input name="sc3" type="text" class="form-control" id="sc3">
-						<label for="floatingInput">city</label>
+						<label for="sc3">city</label>
 					</div>
 					<div class="form-floating">
 						<input name="sc4" type="text" class="form-control" id="sc4">
-						<label for="floatingInput">pay</label>
+						<label for="sc4">pay min</label>
 					</div>
 					<div class="form-floating">
-						<textarea name="sc5" class="form-control" id="sc5"></textarea>
-						<label for="floatingInput">duties</label>
+						<input name="sc5" type="text" class="form-control" id="sc5">
+						<label for="sc5">pay max</label>	
 					</div>
 					<div class="form-floating">
-						<textarea name="sc6" class="form-control" id="sc6"></textarea>
-						<label for="floatingInput">qualifications</label>
+						<select name="sc6" class="form-control" id="sc6">
+							<option value="">----</option>
+							<option value="hour">Hour</option>
+							<option value="year">Year</option>
+						</select>
+						<label for="sc6">pay per</label>
+					</div>
+					<div class="form-floating">
+						<textarea name="sc7" class="form-control" id="sc7"></textarea>
+						<label for="sc7">duties</label>
+					</div>
+					<div class="form-floating">
+						<textarea name="sc8" class="form-control" id="sc8"></textarea>
+						<label for="sc8">qualifications</label>
 					</div>
 					<button class="btn btn-outline-secondary btn-lg px-4" type="submit" >Submit</button>
 				</form>

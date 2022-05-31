@@ -1,49 +1,47 @@
 const express = require('express');
-const debug = require('debug')('app:sessionRouter');
-const { MongoClient, ObjectID } = require('mongodb');
 const passport = require('passport');
+const mongoDB = require('../../../database/mongoDB.js');
 
 const authRouter = express.Router();
 
 //1of3
-authRouter.route('/signUp')
+authRouter.route('/signUp')  // ie register aka insert user into db
   .post((req, res) => {
     const {emailAddress, password} = req.body;
-    const url = 'mongodb+srv://admin:adminASDpoi)(*123@mdbcluster00.ezr4k.mongodb.net?retryWrites=true&w=majority';
-    const catalystDB = 'catalystDB';
     
     (async function addUser() {
-      let mongoClient;
       try {
-        mongoClient = await MongoClient.connect(url);
-        debug('connected mongoDB');
-        const db = mongoClient.db(catalystDB)
+        let db = await mongoDB.getMongoDB();
         const user = {emailAddress, password, local: 'value'}
         const results = await db.collection('users').insertOne(user);
         debug(results);
         user.insertedId = results.insertedId;
         req.login(user, () => {
-          res.redirect('/auth/profile');
+          res.redirect('/auth/profile');  //successful login:  go to "profile"
         })
       } catch (error) {
         debug(error);
       }
-      mongoClient.close();
     } ())
   });
 
+
+//2of3: attempting a login at the login page
 authRouter.route('/signin')
 .get((req, res) => {
   res.render('signin');
 })
+//success decision:  either goto profile upon success or the root of the router upon fail
 .post(passport.authenticate('local', {
   successRedirect: '/auth/profile',
   failureMessage:  '/'
 }));
 
-authRouter.route('/profile')  //3of3
+
+//3of3 ie successful login:  just show user info?  BAD!
+authRouter.route('/profile')  
   .get((req, res) => {
-    res.json(req.user);
+    res.render('home');
   });
 
 

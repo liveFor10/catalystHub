@@ -3,37 +3,24 @@
 	<head>
 		<link rel="icon" type="image/png" href="/images/.favicon.ico">
 		<meta name="viewport" content="width=device-width" initial-scale=1>
-		<title>Catalyst Hub - session</title>
+		<title>Catalyst Hub - jobs</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-		<link href="/css/session.css" rel="stylesheet">
-		<style>
-			.float-parent {
-				border: 0px;
-				padding: 0px;
-			}
-			.float-child-sidebar {
-				width: 150px;
-				float: left;
-				padding: 0px;
-				border-right: 1px solid #000000;
-			}
-			.float-child-main {
-				width: 500px;
-				float: left;
-				padding: 0px;
-				margin-top: 30px;
-				margin-left: 20px;
-			}
-		</style>
+		<link href="/css/jobs.css" rel="stylesheet">
 	</head>
 	<body>
 		<!--columns container--><div class="float-parent">
 			<!--column 1--><div id="sidebar" class="float-child-sidebar"></div><!--column 1-->
 			<!--column 2--><div class="float-child-main">
-				<%=session.title%><br>
-        <%=session.speakers[0].name%>
-        <%=session.description%><br>
+				<div >
+					<% jobs.map((job, arrayIndex)=>{ %>
+						<h3><%=job.title %></h3>
+						<p><%=job.company %>
+							 <%=job.city %>
+						</p>
+						<a href="/jobs/<%=job._id%>" class="btn-oval">Learn More</a><br><br>
+					<% }) %>
+				</div>
 			<!--column 2--></div>
 		<!--column container--></div>
 		
@@ -44,5 +31,6 @@
 	</body>
 </html>
 
-    
+
+		
 

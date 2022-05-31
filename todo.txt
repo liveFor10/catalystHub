@@ -1,3 +1,5 @@
+class project session one
+-------------------------
 x homepage
 x contact page
 x products/services page
@@ -8,7 +10,14 @@ x at least one field with the type of password
   at least one properly formated <select> element
 x at least one type HTML5 validation
 x images
-  HTML list
+x HTML list
 x HTML semantic element
 x CSS framework component like Bootstrap
-  CSS grid framework
+x CSS grid framework
+
+lfx
+-------------------------
+remove db passwords from clear text?
+remember password
+change password
+sign in with google/facebook/
