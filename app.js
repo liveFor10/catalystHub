@@ -26,7 +26,6 @@ app.use('/jobs', jobsRouter);
 
 app.get('/', (req, res) => {
   res.render('home', {
-    title: 'someTitle',
     someData: ['so', 'me', 'da', 'ta']
   });
 });

@@ -12,6 +12,13 @@
 		<!--columns container--><div class="float-parent">
 			<!--column 1--><div id="sidebar" class="float-child-sidebar"></div><!--column 1-->
 			<!--column 2--><div class="float-child-main">
+				<div id="msg ">
+					<% if( locals.message ) { %>
+						not title
+					<% } else { %>  
+						Welcome
+				 	<% } %>
+				</div>
 				<div>
 					<img src="../images/dayBlogging.jpg" class="d-block mx-lg-auto img-fluid"
 						alt="computer programmer daydreaming of teaching code to the formerly incarcerated"
@@ -19,7 +26,7 @@
 				</div>
 				<BR>
 				<div>
-					<h1 class="display-5 fw-bold lh-1 mb-3">Welcome to Catalyst Hub</h1>
+					<h1 class="display-5 fw-bold lh-1 mb-3">Catalyst Hub</h1>
 					<p class="lead">The place where inclusive employers find hard working, highly motivated talent.</p>
 				</div>
 			<!--column 2--></div>

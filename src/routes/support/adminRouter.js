@@ -27,7 +27,7 @@ adminRouter.route('/jobs/:jobID')
     const jobID = req.params.jobID;
     res.render('job', {
       job: jobsData[jobID]
-  });
+    });
 });
 
 
