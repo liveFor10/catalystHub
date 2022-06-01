@@ -6,26 +6,7 @@
 		<title>Catalyst Hub - contact</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-		<link href="/css/contact.css" rel="stylesheet">
-		<style>
-			.float-parent {
-				border: 0px;
-				padding: 0px;
-			}
-			.float-child-sidebar {
-				width: 150px;
-				float: left;
-				padding: 0px;
-				border-right: 1px solid #000000;
-			}
-			.float-child-main {
-				width: 500px;
-				float: left;
-				padding: 0px;
-				margin-top: 30px;
-				margin-left: 20px;
-			}
-		</style>
+		<link href="/css/main.css" rel="stylesheet">
 	</head>
 	<body>
 		<!--column container--><div class="float-parent">
@@ -33,18 +14,17 @@
 			<!--column 2--><div class="float-child-main">
 				<div>
 					<form name="signup" action="/auth/signUp" method=post>
-						<h1 class="h3 mb-3 fw-normal">Please sign up</h1>
+						<h1 class="h3 mb-3 fw-normal">Please speak</h1>
 						<div class="form-floating">
 							<input class="form-control" type="email" id="usr"
 								name="emailAddress" placeholder="name@example.com">
 							<label for="usr">Email address</label>
 						</div>
 						<div class="form-floating">
-							<input class="form-control" type="password" id="pwd"
-								name="password" placeholder="password">
-							<label for="pwd">Password</label>
+							<textarea name="sc7" class="form-control" id="deets"></textarea>
+							<label for="deets">What's on your mind?</label>
 						</div>
-						<input type="submit" id="submit" value="Sign Up"
+						<input type="submit" id="submit" value="Deliver"
 							class="btn btn-outline-secondary btn-lg px-4" >
 						</input>
 					</form>

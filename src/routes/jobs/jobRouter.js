@@ -5,13 +5,15 @@ const mongoDB = require('../../../database/mongoDB.js');
 
 const jobRouter = express.Router();
 
-jobRouter.use((req, res, next) => {
+//tmp commenting so I don't have to login while testing every little change
+//TODO: uncomment conditional access
+/* jobRouter.use((req, res, next) => {
   if (req.user) {
       next();
   } else {
     res.redirect('/auth/signin');
   }
-})
+}) */
 
 //   createnew    const book = new Book(req.body);...
 //   delete       Book.findById... & book.remove((err) => {...
@@ -67,9 +69,9 @@ jobRouter.route('/') // "/jobs" because of "app.use('/jobs', jobRouter);" in app
     (async function mongo(){
       try {
         let db = await mongoDB.getMongoDB();
-        const job = await db.collection('jobs').insertOne(newJob);
+        const result = await db.collection('jobs').insertOne(newJob);
 
-        res.render('job', { job });
+        res.render('job', { result });
       } catch (error) {
         debug(error.stack);
       }

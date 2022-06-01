@@ -5,22 +5,25 @@ const mongoDB = require('../../../database/mongoDB.js');
 const authRouter = express.Router();
 
 //1of3
-authRouter.route('/signUp')  // ie register aka insert user into db
+authRouter.route('/signUp')  // /auth/signUp...ie register aka insert user into db
   .post((req, res) => {
     const {emailAddress, password} = req.body;
     
     (async function addUser() {
       try {
         let db = await mongoDB.getMongoDB();
-        const user = {emailAddress, password, local: 'value'}
-        const results = await db.collection('users').insertOne(user);
-        debug(results);
-        user.insertedId = results.insertedId;
-        req.login(user, () => {
-          res.redirect('/auth/profile');  //successful login:  go to "profile"
-        })
+        const user = {emailAddress, password}
+        const insertResult = await db.collection('users').insertOne(user);
+        if (result) {
+          console.log('lfx ' + insertResult);
+          user.insertedId = insertResult.insertedId;
+          req.login(user, () => {
+            res.redirect('/auth/profile');  //successful login:  go to "profile"
+          })
+        }
+
       } catch (error) {
-        debug(error);
+        console.log('lfx ' + error);
       }
     } ())
   });

@@ -6,33 +6,14 @@
 		<title>Catalyst Hub - employ</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-		<link href="/css/employ.css" rel="stylesheet">
-		<style>
-			.float-parent {
-				border: 0px;
-				padding: 0px;
-			}
-			.float-child-sidebar {
-				width: 150px;
-				float: left;
-				padding: 0px;
-				border-right: 1px solid #000000;
-			}
-			.float-child-main {
-				width: 500px;
-				float: left;
-				padding: 0px;
-				margin-top: 30px;
-				margin-left: 20px;
-			}
-		</style>
+		<link href="/css/main.css" rel="stylesheet">
 	</head>
 
 	<body>
 		<!--column container--><div class="float-parent">
 			<!--column 1--><div id="sidebar" class="float-child-sidebar"></div><!--column 1-->
 			<!--column 2--><div class="float-child-main">
-				<form name="employ" action="searchResults.html" enctype="application/x-www-form-urlencoded" method="POST">
+				<form name="employ" action="/jobs" enctype="application/x-www-form-urlencoded" method="POST">
 					<h1 class="h3 mb-3 fw-normal">Please enter job info</h1>				
 					<div class="form-floating">
 						<input name="sc1" type="text" class="form-control" id="sc1">
