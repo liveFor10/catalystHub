@@ -1,6 +1,6 @@
 const express = require('express');
 const debug = require('debug')('app:adminRouter');
-const mongoDB = require('../../../database/mongoDB.js');
+const mongoDButils = require('../../utils/mongoDButils.js');
 
 const jobsData = require('../../../_gitIgnore/jsonData/jobs.json');
 
@@ -9,15 +9,15 @@ const adminRouter = express.Router();
 adminRouter.route('/jobs') // "/admin/jobs" because of "app.use('/admin', adminRouter);" in app.js
 .get((req, res) => {
     
-    (async function mongo(){
+    (async function manualAdminMaintenance(){
       try {
-        let db = await mongoDB.getMongoDB();
+        let db = await mongoDButils.getConnectedMongoDB();
 
         const response = await db.collection('jobs').insertMany(jobsData);
         res.json(response);
 
       } catch (error) {
-        debug(error.stack);
+        console.log(`adminRouter.manualAdminMaintenance error=${error}`)
       }
     }())
 });

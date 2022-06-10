@@ -1,40 +1,53 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="/css/bootstrap.min.css" rel="stylesheet">
 		<link href="/css/sidebar.css" rel="stylesheet">
+		<style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
 	</head>
 	<body scroll="no" style="overflow: hidden">
-			<!--Sidebar--><div class="flex-shrink-0 p-3 bg-white">
-				<div>
-					<img src="../images/catalystHubLogo.png" width=113 >
-				</div>
-				<div>
-					<span class="fs-5 fw-semibold">Catalyst Hub</span>
-				</div>
-				<!--Actions--><ul class="list-unstyled ps-0">
-					<!--One--><li class="mb-1">
-						<button class="btn btn-toggle align-items-center rounded collapsed"
-						  data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-						  Actions
-						</button>
-						<div class="collapse show" id="home-collapse">
-						  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-								<li><a href="/" class="link-dark rounded">Home</a></li>
-								<li><a href="/signup" class="link-dark rounded">Register</a></li>
-								<li><a href="/auth/signin" class="link-dark rounded">Sign In</a></li>
-								<li><a href="/jobs" class="link-dark rounded">Jobs</a></li>
-								<li><a href="/html/employ.html" class="link-dark rounded">Employ</a></li>
-								<li><a href="/html/search.html" class="link-dark rounded">Search</a></li>
-								<li><a href="/html/contact.html" class="link-dark rounded">Contact</a></li>
-								<li><a href="/html/about.html" class="link-dark rounded">Educate</a></li>
-						  </ul>
-						</div>
-					<!--One--></li>
-				<!--Actions--></ul>
-			<!--Sidebar--></div>
+		<!--Sidebar--><div class="flex-shrink-0 p-3 bg-white">
+			<!--logo--><div><img src="../images/catalystHubLogo.png" width=113 ></div>
+			<!--title--><div><span class="fs-5 fw-semibold">Catalyst Hub</span></div>	
+			<!--Actions--><ul class="list-unstyled ps-0">
+				<!--Sec.1--><li class="mb-1">
+					<button class="btn btn-toggle align-items-center rounded collapsed"
+					  data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+					  Actions
+					</button>
+					<div class="collapse show" id="home-collapse">
+					  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+							<!--x 01--><li><a href="/" class="link-dark rounded">Home</a></li>
+							<!--x 02--><li><a href="/auth/signup" class="link-dark rounded">Register</a></li>
+							<!--x 03--><li><a href="/auth/signin" class="link-dark rounded">Sign In</a></li>
+							<!--  04--><li><a href="/jobs" class="link-dark rounded">Search</a></li>
+							<!--  04--><li><a href="/jobs" class="link-dark rounded">Apply</a></li>
+							<!--  05--><!--job-->
+							<!--  06--><li><a href="/html/employ.html" class="link-dark rounded">Employ</a></li>
 
-		<script src="/js/bootstrap.bundle.min.js"></script>
-		<script src="/js/sidebar.js"></script>
+							<!--  07--><li><a href="/html/contact.html" class="link-dark rounded">Communicate</a></li>
+							<!--  08--><li><a href="/html/about.html" class="link-dark rounded">Educate</a></li>
+							<!--  09--><li><a href="/html/contribute.html" class="link-dark rounded">Contribute</a></li>
+							<!--x 01--><li><a href="/auth/logout" class="link-dark rounded">Logout</a></li>
+					  </ul>
+					</div>
+				<!--Sec.1--></li>
+			<!--Actions--></ul>
+		<!--Sidebar--></div>
 	</body>
 </html>

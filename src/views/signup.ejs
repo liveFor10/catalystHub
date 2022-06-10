@@ -9,34 +9,53 @@
 		<link href="/css/main.css" rel="stylesheet">
 	</head>
 	<body>
-		<!--column container--><div class="float-parent">
-			<!--column 1--><div id="sidebar" class="float-child-sidebar"></div><!--column 1-->
-			<!--column 2--><div class="float-child-main">
-				<div>
-					<form name="signup" action="/auth/signUp" method=post>
-						<h1 class="h3 mb-3 fw-normal">Please register</h1>
-						<div class="form-floating">
-							<input class="form-control" id="nme" name="name" placeholder="name" required>
-							<label for="nme">Name</label>
-						</div>
-						<div class="form-floating">
-							<input class="form-control" type="email" id="usr" name="emailAddress" required
-							  placeholder="name@example.com">
-							<label for="usr">Email address</label>
-						</div>
-						<div class="form-floating">
-							<input class="form-control" type="password" id="pwd" name="password" required
-							  placeholder="password">
-							<label for="pwd">Password</label>
-						</div>
-						<input type="submit" id="signUpSubmit" value="Register"
-							class="btn btn-outline-secondary btn-lg px-4" >
-						</input>
-					</form>
+		<!--column container--><div class="sidebar-main-parent">
+			<!--column 1--><div id="sidebar" class="sidebar"></div><!--column 1-->
+			<!--column 2--><div class="main-window">
+				<div id="msg ">
+					<% if ( locals.message ) { %>
+						<p><%= locals.message %></p>
+					<% } else { %>  
+						
+				 	<% } %>
 				</div>
+				<form class="row g-3 lfxForm" name="signup" action="/auth/signup" method=post>
+
+					<h1 class="h3 mb-3 fw-normal">Please register</h1>
+					
+					<!--begin row 1--><div class="col-md-6 form-floating">
+						<input class="form-control" type="text" id="nme" name="name" required
+							<% if (locals.user) { %> value="<%= user.name %>" <% } %> >
+						<label for="nme">Name</label>
+					</div>
+					<div class="col-md-6 form-floating">
+						<input class="form-control" type="email" id="usr" name="emailAddress" required
+							<% if (locals.user) { %> value="<%= user.emailAddress %>" <% } %>
+						>
+						<label for="usr">Email address</label>
+					<!--end row 1--></div>
+
+					<!--begin row 2--><div class="col-md-12 form-floating">
+						<input class="form-control" type="password" id="pwd" name="password" required
+						>
+						<label for="pwd">Password</label>
+					<!--end row 2--></div>
+
+					<!--begin row 3--><div class="col-md-3 form-floating">
+						<input class="btn btn-outline-secondary btn-lg px-4" type="submit"
+							id="signUpSubmit" value="Register">
+					</div>
+					<div class="col-md-3 form-floating">
+						<input class="btn btn-outline-secondary btn-lg px-4" type="button"
+							id="cfd" value="Reset">
+					</div>
+					<!--end row 3--><div class="col-md-6 form-floating"></div>
+				</form>
 			<!--column 2--></div>
 		<!--column container--></div>
 
+		
+		<script src="/js/validateFormData.js" type="text/javascript"></script>
 		
 		<script src="/js/jquery.3.6.0.min.js" type="text/javascript"></script>
 		<script src="/js/loadSidebar.js" type="text/javascript"></script> 

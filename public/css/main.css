@@ -2,60 +2,101 @@
   margin: 0;
 }
 
+/* html key words */
 html,
 body {
   height: 100%;
+  background-color: #ffffff;
 }
-
 body {
   display: flex;
   align-items: top;
   padding-top: 0px;
   padding-bottom: 0px;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
 }
 
-.form-signup {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
-}
-
-.form-signup .checkbox {
-  font-weight: 400;
-}
-
-.form-signup .form-floating:focus-within {
-  z-index: 2;
-}
-
-.form-signup input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.form-signup input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
-.float-parent {
+/* sidebar/main window layout */
+.sidebar-main-parent {
   border: 0px;
   padding: 0px;
 }
-.float-child-sidebar {
+.sidebar {
   width: 150px;
   float: left;
   padding: 0px;
   border-right: 1px solid #000000;
 }
-.float-child-main {
+.main-window {
   width: 500px;
   float: left;
   padding: 0px;
   margin-top: 30px;
   margin-left: 20px;
+  background-color: #ffffff; /* jobs */
+}
+
+/* register/reset button spacing */
+.registerResetSpacer {
+  min-width: 264x;
+  display: inline-block;
+}
+#cfd {
+  margin-left: 15px;
+}
+
+/* from bootstrap examples html */
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.lfxForm {
+  background-color: #ffffff;
+}
+
+/* job panels */
+.album {
+  background-color: #ffffff;
+}
+.py-5 {
+  background-color: #ffffff;
+}
+.bg-light {
+  background-color: #ffffff;
+}
+.container {
+  background-color: #ffffff;
+}
+.row {
+  background-color: #ffffff;
+}
+.row-cols-1 {
+  background-color: #ffffff;
+}
+.row-cols-sm-2 {
+  background-color: #ffffff;
+}
+.row-cols-md-3 {
+  background-color: #ffffff;
+}
+.g-3 {
+  background-color: #ffffff;
+}
+
+/* flashes, successes, failures and messages */
+.lfxMessages {
+  background-color: #ffffff;
+}
+
+.lfxWhiteDiv {
+  background-color: #ffffff;
 }

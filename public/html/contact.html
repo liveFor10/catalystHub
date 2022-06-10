@@ -9,24 +9,23 @@
 		<link href="/css/main.css" rel="stylesheet">
 	</head>
 	<body>
-		<!--column container--><div class="float-parent">
-			<!--column 1--><div id="sidebar" class="float-child-sidebar"></div><!--column 1-->
-			<!--column 2--><div class="float-child-main">
+		<!--column container--><div class="sidebar-main-parent">
+			<!--column 1--><div id="sidebar" class="sidebar"></div><!--column 1-->
+			<!--column 2--><div class="main-window">
 				<div>
-					<form name="signup" action="/auth/signUp" method=post>
-						<h1 class="h3 mb-3 fw-normal">Please speak</h1>
+					<form name="signup" action="/auth/signup" method=post>
+						<h1 class="h3 mb-3 fw-normal">Please communicate</h1>
 						<div class="form-floating">
 							<input class="form-control" type="email" id="usr"
-								name="emailAddress" placeholder="name@example.com">
+								name="emailAddress">
 							<label for="usr">Email address</label>
 						</div>
 						<div class="form-floating">
-							<textarea name="sc7" class="form-control" id="deets"></textarea>
+							<textarea class="form-control" name="sc7" id="deets"></textarea>
 							<label for="deets">What's on your mind?</label>
 						</div>
-						<input type="submit" id="submit" value="Deliver"
+						<input type="submit" id="submit" value="Send"
 							class="btn btn-outline-secondary btn-lg px-4" >
-						</input>
 					</form>
 				</div>
 			<!--column 2--></div>

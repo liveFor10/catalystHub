@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="icon" type="image/png" href="/images/.favicon.ico">
+		<meta name="viewport" content="width=device-width" initial-scale=1>
+		<title>Catalyst Hub - employ</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link href="/css/main.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<!--column container--><div class="sidebar-main-parent">
+			<!--column 1--><div id="sidebar" class="sidebar"></div><!--column 1-->
+			<!--column 2--><div class="main-window">
+				<form class="row g-3" name="employ" action="/jobs"  method="POST"
+					enctype="application/x-www-form-urlencoded">
+
+					<h1 class="h3 mb-3 fw-normal">Please enter job info</h1>				
+					
+					<!--begin row 1--><div class="col-md-6 form-floating">
+						<input class="form-control" name="jobTitle" type="text" id="jt">
+						<label for="jt">title</label>
+					</div>
+					<div class="col-md-6 form-floating">
+						<input class="form-control" name="jobLocation" type="text" id="jl">
+						<label for="jl">location</label>
+					<!--end row 1--></div>
+
+					<!--begin row 2--><div class="col-md-4 form-floating">
+						<input class="form-control" name="jobPayMin" type="number" id="jpmi">
+						<label for="jpmi">pay min</label>
+					</div>
+					<div class="col-md-4 form-floating">
+						<input class="form-control" name="jobPayMax" type="number" id="jpma">
+						<label for="jpma">pay max</label>	
+					</div>
+					<div class="col-md-4 form-floating">
+						<select class="form-control" name="jobPayPer"              id="jpp" required>
+							<option value="">Select</option>
+							<option value="hour">Hour</option>
+							<option value="year">Year</option>
+						</select>
+						<label for="jpp">pay per</label>
+					<!--end row 2--></div>
+
+					<!--begin row 3--><div class="col-md-12 form-floating">
+						<textarea class="form-control" name="jobDuties"           id="jd"></textarea>
+						<label for="jd">duties</label>
+					<!--end row 3--></div>
+
+					<!--begin row 4--><div class="col-md-12 form-floating">
+						<textarea class="form-control" name="job qualifications"  id="jq"></textarea>
+						<label for="jq">qualifications</label>
+					<!--end row 4--></div>
+
+					<button class="btn btn-outline-secondary btn-lg px-4" type="submit" >Submit</button>
+
+				</form>
+			<!--column 2--></div>
+		<!--column container--></div>
+
+
+		<script src="/js/jquery.3.6.0.min.js" type="text/javascript"></script>
+		<script src="/js/loadSidebar.js" type="text/javascript"></script> 
+		<script src="/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+	</body>
+</html>

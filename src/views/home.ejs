@@ -9,16 +9,21 @@
 		<link href="/css/main.css" rel="stylesheet">
 	</head>
 	<body>
-		<!--columns container--><div class="float-parent">
-			<!--column 1--><div id="sidebar" class="float-child-sidebar"></div><!--column 1-->
-			<!--column 2--><div class="float-child-main">
-				<div id="msg ">
-					<% if( locals.message ) { %>
-						not title
-					<% } else { %>  
-						Welcome
+		<!--columns container--><div class="sidebar-main-parent">
+			<!--column 1--><div id="sidebar" class="sidebar"></div><!--column 1-->
+			<!--column 2--><div class="main-window">
+				<div class="lfxMessages" id="msg ">
+					<% if ( locals.message ) { %>
+						<p class="lfxMessages"><%= locals.message %></p>
+					<% } else if (messages.error) { %>  
+						<p class="lfxMessages"><%= messages.error %></p>
+					<% } else if (messages.success) { %>
+						<p class="lfxMessages"><%= messages.success %></p>
+					<% } else { %>
+						<p class="lfxMessages">Welcome</p>
 				 	<% } %>
 				</div>
+
 				<div>
 					<img src="../images/dayBlogging.jpg" class="d-block mx-lg-auto img-fluid"
 						alt="computer programmer daydreaming of teaching code to the formerly incarcerated"
@@ -36,5 +41,6 @@
 		<script src="/js/jquery.3.6.0.min.js" type="text/javascript"></script>
 		<script src="/js/loadSidebar.js" type="text/javascript"></script> 
 		<script src="/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+		<script src="/js/sidebar.js" type="text/javascript"></script>
 	</body>
 </html>

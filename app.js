@@ -3,6 +3,8 @@ const debug = require('debug')('app');
 const path = require('path');
 const passport = require('passport');
 const session = require('express-session');
+const flash = require("express-flash");
+
 const port = process.env.PORT || 3000;
 const app = express();
 const adminRouter = require('./src/routes/support/adminRouter.js');
@@ -14,6 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded( { extended: false } ));
 //cookieParser
 app.use(session({ secret: 'n2la' }));
+app.use(flash());
 
 require('./src/config/passport.js')(app);
 
@@ -31,5 +34,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`app listening on port ${port}`);
+  console.log('app msg=' + `app listening on port ${port}`);
 });

@@ -1,6 +1,6 @@
 const passport = require('passport');
 const { Strategy } = require('passport-local');
-const mongoDB = require('../../../database/mongoDB.js');
+const mongoDButils = require('../../utils/mongoDButils.js');
 
 function localStrategy() {
 
@@ -9,21 +9,22 @@ function localStrategy() {
     passwordField: 'password'
   }, (emailAddress, password, done) => {
 
-    (async function validateUser(){
+    (async function validateUser() {
       try {
-        let db = await mongoDB.getMongoDB();
+        const db = await mongoDButils.getConnectedMongoDB();
+        const user = await db.collection('users').findOne({ emailAddress });
 
-        const user = await db.collection('users').findOne({
-          emailAddress
-        });
-        if(user && (user.password === password)) {
-          done(null, user);
+        if ( user ) {
+          if (user.password === password) {
+            done(null, user, { message: `You are logged in.  Welcome back ${user.name}.` } );
+          } else {
+            done(null, false, { message: 'Invalid username/password combination.' } );
+          }
         } else {
-          done(null, false)
+          done(null, false, { message: `User, ${user.emailAddress} not found.` } );
         }
-
       } catch (error) {
-        done(error, false);
+        done(error, false, { message: error } );
       }
     }())
   }));
