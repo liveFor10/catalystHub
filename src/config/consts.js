@@ -4,6 +4,7 @@ exports.mongoURL = 'mongodb://127.0.0.1';
 /* exports.mongoURL = 'mongodb+srv://admin:adminASDpoi)(*123@mdbcluster00.ezr4k.mongodb.net?retryWrites=true&w=majority'; */
 
 //query customization
+exports.MAX_ITEMS_PER_QUERY = 119;
 exports.ITEMS_PER_PAGE = 3;
 exports.REQUESTED_PAGE_NUMBER = 0;
 

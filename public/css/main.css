@@ -100,3 +100,64 @@ body {
 .lfxWhiteDiv {
   background-color: #ffffff;
 }
+
+.lfxAnchor {
+  background-color: #e2c6f3;
+}
+a:link {
+  color: black;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  color: black;
+}
+a:active {
+  color: black;
+}
+
+/* job-->apply */
+table, th, td, tr {
+  border:1px solid black;
+  padding: 15px;
+}
+.lfxJobAppTable {
+  border:1px solid black;
+  width: 100%;
+}
+.tblCol01 {
+  border:1px solid black;
+  vertical-align: top;
+  width: 50%;
+}
+.tblCol02 {
+  border:1px solid black;
+  vertical-align: top;
+  width: 50%;
+}
+.lfxJobAppTable-appColHidden {
+  display: none;
+}
+
+/* applications */
+.tblAppJobIDcol {
+  border:1px solid black;
+  vertical-align: top;
+  width: 5%;
+}
+.tblAppDateCol {
+  border:1px solid black;
+  vertical-align: top;
+  width: 5%;
+}
+.tblAppJobTitleCol {
+  border:1px solid black;
+  vertical-align: top;
+  width: 65%;
+}
+.tblAppJobLocationCol {
+  border:1px solid black;
+  vertical-align: top;
+  width: 25%;
+}

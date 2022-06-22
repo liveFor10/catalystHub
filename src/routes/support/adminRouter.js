@@ -1,5 +1,4 @@
 const express = require('express');
-const debug = require('debug')('app:adminRouter');
 const mongoDButils = require('../../utils/mongoDButils.js');
 
 const jobsData = require('../../../_gitIgnore/jsonData/jobs.json');
@@ -17,7 +16,7 @@ adminRouter.route('/jobs') // "/admin/jobs" because of "app.use('/admin', adminR
         res.json(response);
 
       } catch (error) {
-        console.log(`adminRouter.manualAdminMaintenance error=${error}`)
+        console.log(`adminRouter.manualAdminMaintenance error=${JSON.stringify(error)}`)
       }
     }())
 });

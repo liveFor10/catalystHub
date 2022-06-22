@@ -21,7 +21,7 @@ function localStrategy() {
             done(null, false, { message: 'Invalid username/password combination.' } );
           }
         } else {
-          done(null, false, { message: `User, ${user.emailAddress} not found.` } );
+          done(null, false, { message: `User, ${emailAddress} not found.` } );
         }
       } catch (error) {
         done(error, false, { message: error } );

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="icon" type="image/png" href="/images/.favicon.ico">
+		<meta name="viewport" content="width=device-width" initial-scale=1>
+		<title>Catalyst Hub - job applications</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link href="/css/main.css" rel="stylesheet">
+	</head>
+	<body>
+		<!--columns container--><div class="sidebar-main-parent">
+			<!--column 1 sidebar--><div id="sidebar" class="sidebar"></div><!--column 1 sidebar-->
+			<!--column 2 main--><div class="main-window">
+				<% if ( locals.message ) { %>
+						<%= locals.message %>
+				<% } else if (messages.error) { %>  
+					<%= messages.error %>
+				<% } else if (messages.success) { %>
+					<%= messages.success %>
+				<% } %>
+
+				<h1 class="h3 mb-3 fw-normal">Applications</h1>
+				applied to by <%=user.name %> (<%=user.emailAddress %>) as the <u>applicant</u>:<br>
+
+				<% if ( locals.applications.length != 0 ) { %>
+					<table class="lfxJobAppTable">
+						<% applications.map((application, arrayIndex) => { %>
+							<% if ( arrayIndex == 0 ) { %>
+								<tr>
+									<th>App ID</th>
+									<th class="tblAppJobIDcol">Job ID</th>
+									<th class="tblAppDateCol">Application Date</th>
+									<th class="tblAppJobTitleCol">Job Title</th>
+									<th class="tblAppJobLocattionCol">Job Location</th>
+								</tr>
+							<% } %>	
+							<tr>
+								<td><%=application._id %></td>
+								<td class="tblAppJobIDcol">
+									<a href="/applications/<%=application._id%>">
+										...<%=application.job._id.substring(application.job._id.length - 4) %>
+									</a>
+								</td>
+								<td class="tblAppDateCol"><%=application.applicationDate %></td>
+								<td class="tblAppJobTitleCol"><%=application.job.title %></td>
+								<td class="tblAppJobLocationCol"><%=application.job.city %></td>
+							</tr>
+						<% }) %>			
+					</table>
+				<% } else { %>
+					<br>
+					<i>You have not applied to any positions Click 
+						<a href="/search" class="link-dark rounded">here</a> to search for jobs.</i>
+				<% } %>
+
+				<br><br><br><br>
+				<h1 class="h3 mb-3 fw-normal">Employment Opportunities</h1>
+				submitted by <%=user.name %> (<%=user.emailAddress %>) as the <u>employer</u>:<br>
+				
+				<% if ( locals.submissions.length != 0 ) { %>
+					<table class="lfxJobAppTable">
+						<% submissions.map((submission, arrayIndex) => { %>
+							<% if ( arrayIndex == 0 ) { %>
+								<tr>
+									<th class="tblAppJobIDcol">Job ID</th>
+									<th class="tblAppDateCol">Application Name</th>
+									<th class="tblAppJobTitleCol">Applicant Date</th>
+									<th class="tblAppJobTitleCol">Applicant E-mail</th>
+								</tr>
+							<% } %>
+							<tr>
+								<td class="tblAppJobIDcol">
+									<a href="/applications/<%=submission.job._id%>">
+										...<%=submission.job._id.substring(submission.job._id.length - 4) %>
+									</a>
+								</td>
+								<td class="tblAppJobTitleCol"><%=submission.user.name %></td>
+								<td class="tblAppDateCol"><%=submission.applicationDate %></td>
+								<td class="tblAppJobLocationCol"><%=submission.user.emailAddress %></td>
+							</tr>
+						<% }) %>			
+					</table><br><br><br>
+				<% } else { %> 
+					<br>
+					<i>You have not submitted any positions that applicants could apply to.  Click 
+						<a href="/employ" class="link-dark rounded">here</a> to create a job.</i>
+				<% } %>
+			<!--column 2 main--></div>
+		<!--column container--></div>
+		
+
+		<script src="/js/jquery.3.6.0.min.js" type="text/javascript"></script>
+		<script src="/js/loadSidebar.js" type="text/javascript"></script> 
+		<script src="/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+	</body>
+</html>
+
+
+		
+

@@ -13,48 +13,62 @@
 		<!--column container--><div class="sidebar-main-parent">
 			<!--column 1--><div id="sidebar" class="sidebar"></div><!--column 1-->
 			<!--column 2--><div class="main-window">
-				<form class="row g-3" name="employ" action="/jobs"  method="POST"
+				<form class="row g-3" name="employ" action="/employ" method="POST"
 					enctype="application/x-www-form-urlencoded">
 
 					<h1 class="h3 mb-3 fw-normal">Please enter job info</h1>				
 					
+					<!--begin row 0--><div class="col-md-6 form-floating">
+						<input class="form-control" name="company" type="text" id="jc">
+						<label for="jc">company</label>
+					</div>
+					<!--end row 0--><div class="col-md-6 form-floating"></div>
+
 					<!--begin row 1--><div class="col-md-6 form-floating">
-						<input class="form-control" name="jobTitle" type="text" id="jt">
+						<input class="form-control" name="title" type="text" id="jt">
 						<label for="jt">title</label>
 					</div>
 					<div class="col-md-6 form-floating">
-						<input class="form-control" name="jobLocation" type="text" id="jl">
-						<label for="jl">location</label>
+						<input class="form-control" name="city" type="text" id="jlo">
+						<label for="jlo">location</label>
 					<!--end row 1--></div>
 
 					<!--begin row 2--><div class="col-md-4 form-floating">
-						<input class="form-control" name="jobPayMin" type="number" id="jpmi">
+						<input class="form-control" name="payMin" type="number" id="jpmi">
 						<label for="jpmi">pay min</label>
 					</div>
 					<div class="col-md-4 form-floating">
-						<input class="form-control" name="jobPayMax" type="number" id="jpma">
+						<input class="form-control" name="payMax" type="number" id="jpma">
 						<label for="jpma">pay max</label>	
 					</div>
 					<div class="col-md-4 form-floating">
-						<select class="form-control" name="jobPayPer"              id="jpp" required>
-							<option value="">Select</option>
-							<option value="hour">Hour</option>
+						<select class="form-control" name="payUnit"             id="jpp" required>
+							<option selected value="hour">Hour</option>
 							<option value="year">Year</option>
 						</select>
 						<label for="jpp">pay per</label>
 					<!--end row 2--></div>
 
 					<!--begin row 3--><div class="col-md-12 form-floating">
-						<textarea class="form-control" name="jobDuties"           id="jd"></textarea>
+						<textarea class="form-control" name="duties"           id="jd"></textarea>
 						<label for="jd">duties</label>
 					<!--end row 3--></div>
 
 					<!--begin row 4--><div class="col-md-12 form-floating">
-						<textarea class="form-control" name="job qualifications"  id="jq"></textarea>
+						<textarea class="form-control" name="qualifications"  id="jq"></textarea>
 						<label for="jq">qualifications</label>
 					<!--end row 4--></div>
 
-					<button class="btn btn-outline-secondary btn-lg px-4" type="submit" >Submit</button>
+					<!--begin row 5--><div class="col-md-12 form-floating">
+						<textarea class="form-control" name="instructions"  id="ji"></textarea>
+						<label for="ji">instructions</label>
+					<!--end row 5--></div>
+					
+					<!--begin row 6-->						
+						<input  class="col-md-3 btn btn-outline-secondary btn-lg px-4" id="js"
+							type="submit" value="Save">
+					<!--end row 6--><div class="col-md-9 form-floating"></div>
+
 
 				</form>
 			<!--column 2--></div>

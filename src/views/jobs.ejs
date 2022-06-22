@@ -12,6 +12,16 @@
 		<!--columns container--><div class="sidebar-main-parent">
 			<!--column 1--><div id="sidebar" class="sidebar"></div><!--column 1-->
 			<!--column 2--><div class="main-window">
+				<div class="lfxMessages" id="msg ">
+					<% if ( locals.message ) { %>
+						<p class="lfxMessages"><%= locals.message %></p>
+					<% } else if (messages.error) { %>  
+						<p class="lfxMessages"><%= messages.error %></p>
+					<% } else if (messages.success) { %>
+						<p class="lfxMessages"><%= messages.success %></p>
+				 	<% } %>
+				</div>
+				
 				<!--search controls-->
 				<form class="row g-3" name="jobs" action="/jobs/search"
 				  enctype="application/x-www-form-urlencoded"  method="GET">
@@ -37,32 +47,35 @@
 					</div>
 					<div class="col-md-4 form-floating">
 						<select class="form-control" name="jobPayPer" id="jpp" required>
-							<option value="">Select</option>
-							<option value="hour">Hour</option>
+							<option selected value="hour">Hour</option>
 							<option value="year">Year</option>
 						</select>
 						<label for="jpp">pay per</label>
 					<!--end row 2--></div>
 
-					<!--begin row 3--><fieldset class="col-md-5 form-floating">
-						<div>
-							<input type="radio" id="or" name="searchCriterica" value="any" checked>
-							<label for="or">Search for ANY criteria</label>
-						</div>
-						<div>
-							<input type="radio" id="and" name="searchCriterica" value="all">
-							<label for="and">Search for ALL criteria</label>
-						</div>
-					</fieldset>
+					<!--begin row 3-->
+					<div class="col-md-5">
+						<fieldset class="form-floating">
+							<div>
+								<input type="radio" id="or" name="searchCriterica" value="any" checked>
+								<label for="or">Use ANY search filter</label>
+							</div>
+							<div>
+								<input type="radio" id="and" name="searchCriterica" value="all">
+								<label for="and">Use ALL search filters</label>
+							</div>
+						</fieldset>
+					</div>
 					<!--TODO: unhardcode itemsPerPage, requestedPageNumber, searchOrder -->
-
-					<!-- <button class="col-md-3 btn btn-outline-secondary btn-lg px-4" type="submit"
-					  id="ss">Search</button> -->
-					
-					<input  class="col-md-3 btn btn-outline-secondary btn-lg px-4" type="submit"
-						id="searchSubmit" value="Search">
-
-					<!--end row 3--><div class="col-md-4 form-floating"></div>
+					<div class="col-md-3">
+						<input  class="btn btn-outline-secondary btn-lg px-4" type="submit"
+							id="searchSubmit" value="Search">
+					</div>
+					<div class="col-md-3">
+						<input class="btn btn-outline-secondary btn-lg px-4"
+					  	type="button" id="cjsd" value="Reset">
+					</div>
+					<!--end row 3--><div class="col-md-1 form-floating"></div>
 				</form>
 				<br>
 				<!--display-->
@@ -85,11 +98,6 @@
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="btn-group">
 														<a href="/jobs/<%=job._id%>">
-															<!--
-																<button type="button" class="btn btn-sm btn-outline-secondary">
-																	Learn More
-																</button>
-															-->
 															<button class="btn btn-sm btn-outline-secondary btn-lg px-4" type="button">
 																Details
 															</button>

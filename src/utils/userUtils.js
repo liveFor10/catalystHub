@@ -7,5 +7,13 @@ function getUserSignedUpSignedInMessage(request) {
   return retVal;
 }
 
+function credentialsChallenge(req, res, next) {
+  if (req.user) {  //already logged in
+    next();
+  } else {
+    res.redirect('/auth/signIn'); //not logged in
+  }
+}
 
+exports.credentialsChallenge = credentialsChallenge;
 exports.getUserSignedUpSignedInMessage = getUserSignedUpSignedInMessage;

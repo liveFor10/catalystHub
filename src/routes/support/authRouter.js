@@ -8,7 +8,7 @@ const authRouter = express.Router();
 authRouter.use((req, res, next) => {
 
   //already a user AND logged in
-  if (req.user) {  
+  if (req.user) {  //already logged in
     // specifically wanted to sign up
     if (req.originalUrl === '/auth/signup') {
       res.render('signup', {
@@ -32,11 +32,11 @@ authRouter.route('/signup') // /auth/signup...ie show the html with the controls
 authRouter.route('/signup')  // /auth/signup...ie register aka insert user into db
   .post((req, res) => {
     const {name, emailAddress, password} = req.body;
-    const registrationDate = new Date().toISOString();
+    const registrationDate = (new Date()).toLocaleDateString('en-US');
 
     (async function addUser() {
       try {
-        let db = await mongoDButils.getConnectedMongoDB();
+        const db = await mongoDButils.getConnectedMongoDB();
         const user = {name, emailAddress, password, registrationDate}
         const userExists = await mongoDButils.entityExistsInMongoCollection(db, 'users', emailAddress);
 
@@ -47,7 +47,7 @@ authRouter.route('/signup')  // /auth/signup...ie register aka insert user into 
             user.insertedId = insertOccurred.insertedId;
             req.login(user, () => {
               res.render('home', {
-                message: `Your account has been created AND you are logged in, '${name}.'`
+                message: `Your account has been created AND you are logged in, ${name}.`
               });
             })
           } else {

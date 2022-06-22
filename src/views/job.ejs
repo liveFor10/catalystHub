@@ -10,29 +10,84 @@
 	</head>
 	<body>
 		<!--columns container--><div class="sidebar-main-parent">
-			<!--column 1--><div id="sidebar" class="sidebar"></div><!--column 1-->
-			<!--column 2--><div class="main-window">
+			<!--column 1/sidebar--><div id="sidebar" class="sidebar"></div><!--column 1-->
+			<!--column 2/main--><div class="main-window">
 				<div id="msg ">
 					<% if( locals.message ) { %>
 						<%= locals.message %>
 					<% } %>  
 				</div>
-				<b><%=job.title %></b><br>
-					<%=job.submittedByName %><br>
-					<%=job.submittedByEmail %><br>
-					<%=job.submittedByPhone %><br>
-					<%=job.company %><br>
-					<%=job.city %><br>
-					<%=job.payMin %><br>
-					<%=job.payMax %><br>
-					<%=job.payUnit %><br>
-					<%=job.duties %><br>
-					<%=job.qualifications %><br>
-					<%=job.instructions %><br>
+				<table class="lfxJobAppTable">
+					<tr>
+						<td class="tblCol01">
+							Title:  <b><%=job.title %></b><br>
+							Company:  <%=job.company %><br>
+							Location:  <%=job.city %><br>
+							Pay:  <%=job.payMin %>-<%=job.payMax %> / <%=job.payUnit %><br>
+							Duties:  <%=job.duties %><br>
+							Qualifications:  <%=job.qualifications %><br>
+							Instructions:  <%=job.instructions %><br>
+							<br>
+							Submitted By:  <%=job.submittedByName %><br>
+							Submitted By E-mail:  <%=job.submittedByEmail %><br>
+							Submitted By Phone:  <%=job.submittedByPhone %><br>
+							Submitted On Date:  <%=job.submittedOnDate %><br>
+							<br>
+							<input  class="btn btn-outline-secondary btn-lg px-4" id="sja"
+							  type="button" value="Application-->" onclick="showHideAppColumn()">
+						</td>
+						<!-- between columns of table -->
+						<td class="tblCol02 lfxJobAppTable-appColHidden">
+							<form action="/applications" enctype="multipart/form-data" method="POST">
+								<textarea name="job" hidden id="j"><%- JSON.stringify(job) %></textarea>
+								<div>
+									<textarea class="form-floating form-control" name="coverLetter"  id="c"
+										placeholder="paste cover letter"></textarea>
+								</div>
+								<br>
+								<div>
+									<textarea class="form-floating form-control" name="resume"       id="r"
+										placeholder="paste resume"></textarea>
+								</div>
+								<br>
+								or upload resume:
+								<br>
+								<br>
+								<div>
+									<input class="form-floating form-control" name="attachment" type="file" id="a" 
+										accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+									>
+								</div>
+								<br>
+								<div>
+									<input  class="col-md-6 btn btn-outline-secondary btn-lg px-4" id="as"
+										type="submit" value="Apply">
+								</div>
+							</form>
+						</td>
+					</tr>
+				</table>
 			<!--column 2--></div>
 		<!--column container--></div>
 		
-		
+		<script type="text/javascript">
+			function showHideAppColumn() {
+				console.log("first");
+				let colList = document.getElementsByClassName("tblCol02");
+				console.log(JSON.stringify(colList));
+				for (let i = 0; i < colList.length; i++) {
+					let col = colList[i];
+					console.log(JSON.stringify(col));
+					if ( col.classList.contains("lfxJobAppTable-appColHidden") ) {
+						col.classList.remove("lfxJobAppTable-appColHidden");
+						console.log(JSON.stringify("removed"));
+					} else {
+						col.classList.add("lfxJobAppTable-appColHidden");
+						console.log(JSON.stringify("added"));
+					}
+				}
+			}
+		</script>
 		<script src="/js/jquery.3.6.0.min.js" type="text/javascript"></script>
 		<script src="/js/loadSidebar.js" type="text/javascript"></script> 
 		<script src="/js/bootstrap.bundle.min.js" type="text/javascript"></script>
